@@ -16,9 +16,46 @@
 </head>
 
 <body>
-
     <main class="bg-light">
-        <h1>train</h1>
+        <div>
+            <h2>Tutti i treni</h2>
+            @foreach ($trains as $train)
+            <div>
+                <h3>{{$train['company']}}</h3>
+                <div>
+                    <span><strong>{{$train['trip_date']}}</strong></span>
+                    <span><strong>{{$train['start_station']}}</strong></span>
+                    <span><strong>{{$train['leave_time']}}</strong></span>
+                </div>
+                <div>
+                    <span><strong>{{$train['destination']}}</strong></span>
+                    <span><strong>{{$train['arrival_time']}}</strong></span>
+                </div>  
+            </div> 
+            @endforeach
+        </div>
+
+        <div>
+            <h2>Treni in partenza oggi</h2>
+            @foreach ($trains as $train)
+                @if ($train['trip_date'] == '2023-01-17')
+                <div>
+                    <h3>{{$train['company']}}</h3>
+                    <div>
+                        <span><strong>{{$train['trip_date']}}</strong></span>
+                        <span><strong>{{$train['start_station']}}</strong></span>
+                        <span><strong>{{$train['leave_time']}}</strong></span>
+                    </div>
+                    <div>
+                        <span><strong>{{$train['destination']}}</strong></span>
+                        <span><strong>{{$train['arrival_time']}}</strong></span>
+                    </div>  
+                </div> 
+                @endif
+            @endforeach
+        </div>
+        
+        
     </main>
 
 </body>
