@@ -18,7 +18,7 @@ class TrainsTableSeeder extends Seeder
     {
         for ($i=0; $i <= 7; $i++ ){
             $new_train = new Train();
-            $new_train->company = $faker->randomElement(['Trenitalia, Italo,']);
+            $new_train->company = $faker->randomElement(['Trenitalia', 'Italo']);
             $new_train->start_station = $faker->city();
             $new_train->destination = $faker->city();
             $new_train->trip_date = $faker->date('Y_m_d');
