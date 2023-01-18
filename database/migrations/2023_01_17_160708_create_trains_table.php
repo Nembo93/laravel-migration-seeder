@@ -27,6 +27,7 @@ return new class extends Migration
             $table->boolean('aborted')->default(0);
             $table->timestamps();
         });
+
     }
 
     /**
